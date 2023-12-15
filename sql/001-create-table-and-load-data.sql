@@ -1,11 +1,11 @@
-DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS juices;
 
-CREATE TABLE movies (
+CREATE TABLE juices (
   id int unsigned AUTO_INCREMENT,
-  name VARCHAR(100) NOT NULL,
-  director VARCHAR(100) NOT NULL,
+  name VARCHAR(20) NOT NULL,
+  price INT NOT NULL,
   PRIMARY KEY(id)
 );
 
-INSERT INTO movies (name, director) VALUES ("ショーシャンクの空に", "フランク・ダラボン");
-INSERT INTO movies (name, director) VALUES ("この世界の片隅に", "片渕須直");
+INSERT INTO juices (name, price) VALUES ("コカ・コーラ", 180);
+INSERT INTO juices (name, price) VALUES ("コーヒー", 100);
