@@ -9,4 +9,6 @@ import java.util.List;
 public interface JuiceMapper {
     @Select("SELECT * FROM juices")
     List<Juice> findAll();
+    @Select("SELECT * FROM juices WHERE name LIKE CONCAT(#{prefix}, '%')")
+    List<Juice> findByNameStartingWith(String prefix);
 }
