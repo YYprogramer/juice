@@ -13,8 +13,8 @@ public class JuiceController {
     public JuiceController(JuiceMapper juiceMapper) {
         this.juiceMapper = juiceMapper;
     }
-    @GetMapping("/juices/{startsWith}")
-    public List<Juice> findByNames(@PathVariable("startsWith") String startsWith) {
-        return juiceMapper.findByNameStartingWith(startsWith);
+    @GetMapping("/juices")
+    public List<Juice> findByNames(JuiceSearchRequest request) {
+        return juiceMapper.findByNameStartingWith(request.getStartsWith(), request.getEndsWith(), request.getContains());
     }
 }
