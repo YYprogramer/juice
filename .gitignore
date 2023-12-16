@@ -20,3 +20,7 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+# .gradleファイルをGit適用外とする
+.gradle/
+# bundleファイルをGit適用外とする
+build/
