@@ -17,7 +17,7 @@ public class JuiceService {
         if (juice.isPresent()) {
             return juice.get();
         } else {
-            throw new JuiceNotFoundException("juice not found");
+            throw new JuiceNotFoundException("juice_id :" + id + " is not found");
         }
     }
 }
