@@ -10,10 +10,9 @@ public class JuiceController {
     public JuiceController(JuiceService juiceService) {
         this.juiceService = juiceService;
     }
+
     @GetMapping("/juices/{id}")
     public Juice getJuice(@PathVariable("id") int id) {
         return juiceService.findJuice(id);
     }
-
-
 }
