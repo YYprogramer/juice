@@ -16,7 +16,6 @@ import java.util.Map;
 public class JuiceController {
     private final JuiceService juiceService;
     public JuiceController(JuiceService juiceService) {
-
         this.juiceService = juiceService;
     }
     @GetMapping("/juices/{id}")
