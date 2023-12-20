@@ -14,10 +14,8 @@ public class JuiceService {
 
     public Juice findJuice(int id) {
         Optional<Juice> juice = this.juiceMapper.findById(id);
-        if (juice.isPresent()) {
-            return juice.get();
-        } else {
-            throw new JuiceNotFoundException("juice_id :" + id + " is not found");
-        }
+        return this.juiceMapper.findById(id)
+                .orElseThrow(() -> new JuiceNotFoundException("juice_id :" + id + " is not found"));
+
     }
 }
