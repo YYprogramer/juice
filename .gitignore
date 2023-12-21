@@ -24,3 +24,5 @@ TestResults.xml
 .gradle/
 # bundleファイルをGit適用外とする
 build/
+# gradleファイルをGit適用外とする
+gradle/

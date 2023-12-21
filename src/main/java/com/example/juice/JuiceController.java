@@ -2,19 +2,17 @@ package com.example.juice;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 public class JuiceController {
-    private final JuiceMapper juiceMapper;
-    public JuiceController(JuiceMapper juiceMapper) {
-        this.juiceMapper = juiceMapper;
+    private final JuiceService juiceService;
+    public JuiceController(JuiceService juiceService) {
+        this.juiceService = juiceService;
     }
-    @GetMapping("/juices")
-    public List<Juice> findByNames(JuiceSearchRequest request) {
-        return juiceMapper.findByNameStartingWith(request.getStartsWith(), request.getEndsWith(), request.getContains());
+
+    @GetMapping("/juices/{id}")
+    public Juice getJuice(@PathVariable("id") int id) {
+        return juiceService.findJuice(id);
     }
 }
